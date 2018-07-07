@@ -3,6 +3,8 @@ local Entity = require "entity"
 local player = Entity
 player:init(400, 300, 10, {255, 0, 0})
 
+local nothing = 0
+
 -- preload function to load any images/sounds or the like
 function love.load()
 end
