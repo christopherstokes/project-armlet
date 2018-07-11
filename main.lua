@@ -1,7 +1,8 @@
-local Entity = require "entity"
+class = require "lib/30log"
+Entity = require "obj/entity"
+local Player = require "obj/player"
 
-local player = Entity
-player:init(400, 300, 10, {255, 0, 0})
+local player = Player:new(400, 300, 10, {255, 0, 0})
 
 local nothing = 0
 
