@@ -14,7 +14,9 @@ end
 
 -- update function called continuously
 function love.update(dt)
-  player:update(dt)
+  for e=1, #Entity.entities do
+    Entity.entities[e]:update(dt)
+  end
 end
 
 -- draw function called 60 times/sec typically
