@@ -17,8 +17,6 @@ end
 
 -- draw function called 60 times/sec typically
 function love.draw()
---  love.graphics.print("Hello World", 400, 300)
---  love.graphics.clear(0,0,0)
   player:draw()
 end
 
