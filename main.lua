@@ -19,8 +19,8 @@ end
 
 -- draw function called 60 times/sec typically
 function love.draw()
-  for i=1, #Entity.entities do
-    Entity.entities[i]:draw()
+  for e=1, #Entity.entities do
+    Entity.entities[e]:draw()
   end
 end
 
