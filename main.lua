@@ -19,7 +19,9 @@ end
 
 -- draw function called 60 times/sec typically
 function love.draw()
-  player:draw()
+  for i=1, #Entity.entities do
+    Entity.entities[i]:draw()
+  end
 end
 
 -- quit function called when player exits game

@@ -1,7 +1,10 @@
 local Entity = class("Entity")
 
+Entity.entities = {}
+
 function Entity:init(x, y, r, col)
   self.x, self.y, self.r, self.col = x, y, r, col
+  table.insert(Entity.entities, self)
 end
 
 function Entity:update(dt)
