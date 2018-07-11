@@ -14,7 +14,7 @@ end
 
 -- update function called continuously
 function love.update(dt)
-  for e=1, #Entity.entities do
+  for e=#Entity.entities, 1, -1 do
     Entity.entities[e]:update(dt)
   end
 end
