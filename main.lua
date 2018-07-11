@@ -1,10 +1,12 @@
-class = require "lib/30log"
+class = require "lib/30log" -- object-orientation library
+flux = require "lib/flux" -- tweening library
+
 Entity = require "obj/entity"
-local Player = require "obj/player"
+Player = require "obj/player"
+Spawner = require "obj/spawner"
+Creep = require "obj/creep"
 
 local player = Player:new(400, 300, 10, {255, 0, 0})
-
-local nothing = 0
 
 -- preload function to load any images/sounds or the like
 function love.load()
