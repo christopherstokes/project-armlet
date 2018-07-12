@@ -1,7 +1,7 @@
 class = require "lib/30log" -- object-orientation library
 flux = require "lib/flux" -- tweening library
 
-Mixin = require "mixin"
+Mixin = require "obj/mixin"
 Entity = require "obj/entity"
 Player = require "obj/player"
 Spawner = require "obj/spawner"
