@@ -22,13 +22,13 @@ end
 
 -- update function called continuously
 function love.update(dt)
-  flux.update(dt)
-  current_state.update(dt)
+    flux.update(dt)
+    current_state.update(dt)
 end
 
 -- draw function called 60 times/sec typically
 function love.draw()
-  current_state.draw()
+    current_state.draw()
 end
 
 -- quit function called when player exits game
