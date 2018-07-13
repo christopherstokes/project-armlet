@@ -1,7 +1,7 @@
 local Game = {}
 
-Game.load = function()
-    local player = Player:new(400, 300, 10, {255, 0, 0}, 3)
+Game.load = function(joystick)
+    local player = Player:new(400, 300, 10, {255, 0, 0}, 3, joystick)
 end
 
 Game.update = function(dt)

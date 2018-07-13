@@ -14,8 +14,7 @@ Creep = require "obj/creep"
 
 -- preload function to load any images/sounds or the like
 function love.load()
-    local joysticks = love.joystick.getJoysticks()
-    joystick = joysticks[1]
+    joysticks = love.joystick.getJoysticks()
     
     current_state = MenuState
 end
