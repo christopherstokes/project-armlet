@@ -1,6 +1,6 @@
 local Creep = Entity:extend("Creep")
 
-Creep:update = function(dt)
+function Creep:update(dt)
     
 end
 
