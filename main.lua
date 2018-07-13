@@ -1,6 +1,13 @@
 class = require "lib/30log" -- object-orientation library
 flux = require "lib/flux" -- tweening library
 
+MenuState = require "states/menu"
+ConfGPadState = require "states/confgpad"
+GameState = require "states/game"
+GameoverState = require "states/gameover"
+
+current_state = MenuState
+
 Mixin = require "obj/mixin"
 Entity = require "obj/entity"
 Player = require "obj/player"
@@ -11,20 +18,18 @@ local player = Player:new(400, 300, 10, {255, 0, 0})
 
 -- preload function to load any images/sounds or the like
 function love.load()
+  local joysticks = love.joystick.getJoysticks()
+  joystick = joysticks[1]
 end
 
 -- update function called continuously
 function love.update(dt)
-  for e=#Entity.entities, 1, -1 do
-    Entity.entities[e]:update(dt)
-  end
+  current_state.update(dt)
 end
 
 -- draw function called 60 times/sec typically
 function love.draw()
-  for e=1, #Entity.entities do
-    Entity.entities[e]:draw()
-  end
+  current_state.draw()
 end
 
 -- quit function called when player exits game
