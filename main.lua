@@ -13,7 +13,7 @@ Spawner = require "obj/spawner"
 Creep = require "obj/creep"
 
 -- preload function to load any images/sounds or the like
-  function love.load()
+function love.load()
     local joysticks = love.joystick.getJoysticks()
     joystick = joysticks[1]
     
