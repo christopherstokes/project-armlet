@@ -6,24 +6,23 @@ ConfGPadState = require "states/confgpad"
 GameState = require "states/game"
 GameoverState = require "states/gameover"
 
-current_state = MenuState
-
 Mixin = require "obj/mixin"
 Entity = require "obj/entity"
 Player = require "obj/player"
 Spawner = require "obj/spawner"
 Creep = require "obj/creep"
 
-local player = Player:new(400, 300, 10, {255, 0, 0})
-
 -- preload function to load any images/sounds or the like
-function love.load()
-  local joysticks = love.joystick.getJoysticks()
-  joystick = joysticks[1]
+  function love.load()
+    local joysticks = love.joystick.getJoysticks()
+    joystick = joysticks[1]
+    
+    current_state = MenuState
 end
 
 -- update function called continuously
 function love.update(dt)
+  flux.update(dt)
   current_state.update(dt)
 end
 

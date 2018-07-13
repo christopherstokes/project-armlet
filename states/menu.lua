@@ -2,7 +2,10 @@ local Menu = {}
 
 Menu.update = function(dt)
     if love.keyboard.isDown("up") then current_state = ConfGPadState end
-    if love.keyboard.isDown("down") then current_state = GameState end
+    if love.keyboard.isDown("down") then 
+        GameState.load()
+        current_state = GameState 
+    end
 end
 
 Menu.draw = function()
