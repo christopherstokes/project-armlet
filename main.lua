@@ -7,6 +7,7 @@ GameState = require "states/game"
 GameoverState = require "states/gameover"
 
 Mixin = require "obj/mixin"
+Animation = require "obj/animation"
 Entity = require "obj/entity"
 Player = require "obj/player"
 Spawner = require "obj/spawner"
