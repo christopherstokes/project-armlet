@@ -1,9 +1,9 @@
 local Game = {}
 
 Game.load = function(joystick)
-    local player = Player:new(400, 300, 10, {255, 0, 0}, 3, joystick)
-    local creep = Creep:new(200, 200, 5, {0,255,0})
-    local spawner = Spawner:new(200, 300, 20, {0,0,255})
+    player = Player:new(400, 300, 10, {255, 0, 0}, 3, joystick)
+    creep = Creep:new(200, 200, 5, {0,255,0})
+    spawner = Spawner:new(200, 300, 20, {0,0,255})
 end
 
 Game.update = function(dt)
