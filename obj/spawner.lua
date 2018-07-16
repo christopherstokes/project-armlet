@@ -8,6 +8,9 @@ end
 function Spawner:update(dt)
     if dt % period == 0 then
         -- insert creep in some way
+        c = Creep:new(self.x, self.y)
+
+        table.insert(Creep.creeps, c)
     end
 end
 

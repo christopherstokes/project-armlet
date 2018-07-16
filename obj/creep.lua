@@ -1,5 +1,7 @@
 local Creep = Entity:extend("Creep")
 
+Creep.creeps = {}
+
 local BasicCreep = {
     level_3 = {
         hp = 4,
@@ -22,11 +24,15 @@ local BasicCreep = {
 }
 
 function Creep:init(x, y, r, col)
-    Creep.super.init(self, x, y, r, col)
+    local c = Creep.super.init(self, x, y, r, col)
 
     for k, v in ipairs(BasicCreep.level_3) do
-        self[k] = v
+        c[k] = v
     end
+
+    table.insert(Creep.creeps, c) 
+    table.insert(Entity.entities, c)
+    return c
 end
 
 function Creep:update(dt)
