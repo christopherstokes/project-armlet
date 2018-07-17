@@ -28,13 +28,15 @@ local CreepMixins = {
 function Creep:init(type, level, x, y, r, col)
     Creep.super.init(self, x, y, r, col)
 
-    Creep.super:with(CreepMixins[type][level])
+    -- Creep.super:with(CreepMixins[type][level])
+    self.type = type
+    self.level = level
 
-    -- for k,v in ipairs(CreepMixins[type][level]) do
-    --     self[k] = v
-    -- end
+    for k,v in pairs(CreepMixins[type][level]) do
+        self[k] = v
+    end
 
-    table.insert(Creep.creeps, self) 
+    table.insert(Creep.creeps, self)
 end
 
 function Creep:update(dt)
