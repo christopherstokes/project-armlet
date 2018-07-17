@@ -2,37 +2,39 @@ local Creep = Entity:extend("Creep")
 
 Creep.creeps = {}
 
-local BasicCreep = {
-    level_3 = {
-        hp = 4,
-        atk = 1,
-        range = 1,
-        spd = 2
-    },
-    level_2 = {
-        hp = 3,
-        atk = 1,
-        range = 0.5,
-        spd = 2
-    },
-    level_1 = {
-        hp = 2,
-        atk = 0.5,
-        range = 0.5,
-        spd = 3
+local CreepMixins = {
+    BasicCreep = {
+        {
+            hp = 2,
+            atk = 0.5,
+            range = 0.5,
+            spd = 3
+        },
+        {
+            hp = 3,
+            atk = 1,
+            range = 0.5,
+            spd = 2
+        },
+        {
+            hp = 4,
+            atk = 1,
+            range = 1,
+            spd = 2
+        }
     }
 }
 
-function Creep:init(x, y, r, col)
-    local c = Creep.super.init(self, x, y, r, col)
+function Creep:init(type, level, x, y, r, col)
+    Creep.super.init(self, x, y, r, col)
 
-    for k, v in ipairs(BasicCreep.level_3) do
-        c[k] = v
-    end
+    Creep.super:with(CreepMixins[type][level])
 
-    table.insert(Creep.creeps, c) 
-    table.insert(Entity.entities, c)
-    return c
+    -- for k,v in ipairs(CreepMixins[type][level]) do
+    --     self[k] = v
+    -- end
+
+    table.insert(Creep.creeps, self) 
 end
 
 function Creep:update(dt)
