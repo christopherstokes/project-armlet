@@ -18,12 +18,14 @@ Creep = require "obj/creep"
 function love.load()
     joysticks = love.joystick.getJoysticks()
     
+    timer = 0
     current_state = MenuState
 end
 
 -- update function called continuously
 function love.update(dt)
     flux.update(dt)
+    timer = timer + 1
     current_state.update(dt)
 end
 
