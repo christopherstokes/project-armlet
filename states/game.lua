@@ -1,6 +1,7 @@
 local Game = {}
 
 Game.load = function(joystick)
+    local joystick = joystick or false
     player = Player:new(400, 300, 10, {0, 255, 0}, 6, joystick)
     creep = Creep:new("BasicCreep", 1, 200, 200, 5, {255,0,0})
     spawner = Spawner:new(400, 300, 10, {0,0,255}, 240)

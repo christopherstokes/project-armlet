@@ -21,17 +21,17 @@ function Entity:draw()
 	
 	
 	-- status message for debugging
-	local status_message = ""
-	for k,v in pairs(self) do
-		if type(v) ~= "table" and type(v) ~= "function" and type(v) ~= "userdata" then
-			status_message = status_message.."| "..k..": "..v.." |"
-		end
-		-- status_message = (status_message..k..": "..v.." || ")
-	end
-	local status_font = love.graphics.getFont()
-	local status_width = status_font:getWidth(status_message)
+	-- local status_message = ""
+	-- for k,v in pairs(self) do
+	-- 	if type(v) ~= "table" and type(v) ~= "function" and type(v) ~= "userdata" then
+	-- 		status_message = status_message.."| "..k..": "..v.." |"
+	-- 	end
+	-- 	-- status_message = (status_message..k..": "..v.." || ")
+	-- end
+	-- local status_font = love.graphics.getFont()
+	-- local status_width = status_font:getWidth(status_message)
 	
-	love.graphics.print(status_message, self.x - (status_width/2), self.y + 20)
+	-- love.graphics.print(status_message, self.x - (status_width/2), self.y + 20)
 
 end
 
