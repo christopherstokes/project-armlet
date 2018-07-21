@@ -3,7 +3,9 @@ flux = require "lib/flux" -- tweening library
 
 MenuState = require "states/menu"
 ConfGPadState = require "states/confgpad"
+CharSelectState = require "states/charselect"
 GameState = require "states/game"
+LevelState = require "states/level"
 GameoverState = require "states/gameover"
 
 Mixin = require "obj/mixin"

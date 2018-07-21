@@ -1,0 +1,3 @@
+local CharacterSelect = {}
+
+return CharacterSelect
